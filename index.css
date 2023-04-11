@@ -1,0 +1,130 @@
+@import url('https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@300;600;800&display=swap');
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Nunito Sans', sans-serif;
+}
+
+:root {
+  /* Dark mode */
+  --Dark-Blue: hsl(209, 23%, 22%);
+  --Very-Dark-Blue: hsl(207, 26%, 17%);
+
+  /* Light mode */
+  --Very-Dark-blue-text: hsl(200, 15%, 8%);
+  --Dark-Gray: hsl(0, 0%, 52%);
+  --Very-Light-Gray: hsl(0, 0%, 98%);
+}
+
+/* ------------------------ */
+
+.container {
+  width: 375px;
+  background: var(--Very-Dark-Blue);
+  margin: 0 auto;
+}
+
+header {
+  height: 80px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 16px;
+  background: var(--Dark-Blue);
+}
+
+h1 {
+  font-size: 14px;
+  color: white;
+}
+
+/* ! Main ------------------------ */
+
+main {
+  display: flex;
+  flex-direction: column;
+  background: var(--Very-Dark-Blue);
+}
+
+/* Search ------ */
+
+#search_input {
+  width: 343px;
+  height: 48px;
+  background: var(--Dark-Blue);
+  margin: 24px auto 40px auto;
+  border: none;
+  box-shadow: 0px 2px 9px rgba(0, 0, 0, 0.0532439);
+  border-radius: 5px;
+  padding-left: 74px;
+}
+
+::placeholder {
+  color: white;
+}
+
+/* Filter ------ */
+
+.filter_container {
+  width: 200px;
+  height: 48px;
+  margin-left: 16px;
+  display: grid;
+  place-content: center;
+  margin: 0 0 32px 16px;
+}
+
+#region_filter {
+  width: 155.75px;
+  height: 20px;
+  background: var(--Very-Dark-Blue);
+  color: white;
+  border: none;
+}
+
+select option {
+  background: var(--Dark-Blue);
+  border: none;
+}
+
+/* Output Container ----  */
+
+/* .output_container {
+  border: 1px solid red;
+} */
+
+.countrie_card {
+  width: 264px;
+  height: 336px;
+  margin: 0 auto 40px auto;
+}
+
+.container_imagem {
+  height: calc(336px / 2);
+  /* background: red; */
+  background-image: url('https://flagcdn.com/hu.svg');
+  background-size: cover;
+  background-position: center;
+}
+
+.detalhes_pais {
+  padding: 24px 0 46px 24px;
+  color: white;
+}
+
+.nome_pais {
+  margin-bottom: 16px;
+  font-style: normal;
+  font-weight: 800;
+  font-size: 18px;
+}
+
+.title {
+  font-weight: 600;
+}
+
+.bandeira_pais {
+  width: 100%;
+}
