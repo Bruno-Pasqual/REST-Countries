@@ -5,6 +5,7 @@
   padding: 0;
   box-sizing: border-box;
   font-family: 'Nunito Sans', sans-serif;
+  color: white;
 }
 
 :root {
@@ -24,6 +25,7 @@
   width: 375px;
   background: var(--Very-Dark-Blue);
   margin: 0 auto;
+  outline: 4px solid red;
 }
 
 header {
@@ -37,7 +39,6 @@ header {
 
 h1 {
   font-size: 14px;
-  color: white;
 }
 
 /* ! Main ------------------------ */
@@ -81,7 +82,6 @@ main {
   width: 155.75px;
   height: 20px;
   background: var(--Very-Dark-Blue);
-  color: white;
   border: none;
 }
 
@@ -114,7 +114,6 @@ select option {
 
 .detalhes_pais {
   padding: 24px 0 46px 24px;
-  color: white;
 }
 
 .nome_pais {
@@ -135,8 +134,61 @@ select option {
 /*! Editando o modal ------- */
 
 .modal {
-  height: 100vh;
+  min-height: 100vh;
   width: 375px;
   position: absolute;
   background: var(--Very-Dark-Blue);
+  transition: all 1s;
+}
+
+.modal.ativo {
+  transform: scale(0.1);
+}
+
+/* GoBack */
+
+.goBack_btn {
+  width: 104px;
+  height: 32px;
+  background: var(--Dark-Blue);
+  border: none;
+  margin: 40px 0 64px 28px;
+  font-size: 14px;
+}
+
+/* Detalhes */
+
+.container_pai_detalhes {
+  display: flex;
+  flex-direction: column;
+  row-gap: 32px;
+  align-items: left;
+  padding: 0 0 68px 24px;
+}
+
+.detalhes_pais_selecionado p,
+.detalhes_pais_selecionado_dois p {
+  line-height: 32px;
+}
+
+.neighbors_container {
+  display: flex;
+  column-gap: 10px;
+  margin-top: 16px;
+}
+
+.neighbor {
+  background: var(--Dark-Blue);
+  width: 96px;
+  height: 28px;
+  font-size: 12px;
+  display: grid;
+  place-content: center;
+}
+
+.container_bandeira {
+  width: 320px;
+  height: 229px;
+  border: 1px solid lightblue;
+  margin: 0 0 44px 28px;
 }
