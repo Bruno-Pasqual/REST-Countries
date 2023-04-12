@@ -1,4 +1,6 @@
 import criaCards from './criaCards.js';
+import selecaoRegiao from './selecaoRegiao.js';
+import searchBar from './searchBar.js';
 
 const url = 'https://restcountries.com/v3.1/all';
 
@@ -13,6 +15,9 @@ const fetchData = async () => {
 };
 
 fetchData().then((data) => {
-  console.log(data);
-  criaCards(data);
+  criaCards(data, data);
+  //Event listener que realiza a atualização do output com base na seleção de região pelo option
+  selecaoRegiao(data);
+  //Executa função que irá habilitar a pesquisa na barra de pesquisa
+  searchBar(data);
 });

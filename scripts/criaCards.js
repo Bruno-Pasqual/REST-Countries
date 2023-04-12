@@ -1,6 +1,10 @@
-const criaCards = (array) => {
+import atualizaImagens from './atualizaImagens.js';
+import clickOnCard from './clickOnCard.js';
+
+const criaCards = (array, arrayPaises) => {
   const outputContainer = document.querySelector('.output_container');
 
+  outputContainer.innerHTML = '';
   array.map((objeto) => {
     let { population, name, region, capital, flags } = objeto;
 
@@ -31,6 +35,9 @@ const criaCards = (array) => {
 
     //Atualizando imagem
   });
+
+  atualizaImagens(array);
+  clickOnCard(arrayPaises);
 };
 
 export default criaCards;

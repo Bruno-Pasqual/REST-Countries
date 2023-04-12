@@ -46,6 +46,7 @@ main {
   display: flex;
   flex-direction: column;
   background: var(--Very-Dark-Blue);
+  min-height: 100vh;
 }
 
 /* Search ------ */
@@ -99,6 +100,8 @@ select option {
   width: 264px;
   height: 336px;
   margin: 0 auto 40px auto;
+  background: var(--Dark-Blue);
+  border-radius: 0 0 5px 5px;
 }
 
 .container_imagem {
@@ -127,4 +130,13 @@ select option {
 
 .bandeira_pais {
   width: 100%;
+}
+
+/*! Editando o modal ------- */
+
+.modal {
+  height: 100vh;
+  width: 375px;
+  position: absolute;
+  background: var(--Very-Dark-Blue);
 }
