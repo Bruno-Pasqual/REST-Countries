@@ -6,7 +6,6 @@ const searchBar = (arrayPaises) => {
   searchBar.addEventListener('input', () => {
     //Criando variável para a entrada do usuário
     let entradaPesquisa = searchBar.value.toLowerCase();
-    console.log(entradaPesquisa);
 
     //Realizando um filtro que usa a pesquisa do usuário como parâmetro
     const paisesCorrespondentes = arrayPaises.filter((objeto) => {

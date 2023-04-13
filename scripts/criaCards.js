@@ -1,12 +1,13 @@
 import atualizaImagens from './atualizaImagens.js';
 import clickOnCard from './clickOnCard.js';
 
-const criaCards = (array, arrayPaises) => {
+const criaCards = (paisesCorrespondentes, arrayPaises) => {
   const outputContainer = document.querySelector('.output_container');
 
   outputContainer.innerHTML = '';
-  array.map((objeto) => {
-    let { population, name, region, capital, flags } = objeto;
+  const listaSiglas = {};
+  paisesCorrespondentes.map((objeto) => {
+    let { population, name, region, capital, flags, fifa } = objeto;
 
     //Checando a existência da capital no objeto
     if (capital === undefined) {
@@ -36,8 +37,14 @@ const criaCards = (array, arrayPaises) => {
     //Atualizando imagem
   });
 
-  atualizaImagens(array);
-  clickOnCard(array);
+  arrayPaises.map((pais) => {
+    const { fifa, name } = pais;
+
+    listaSiglas[fifa] = name.common;
+  });
+
+  atualizaImagens(paisesCorrespondentes);
+  clickOnCard(paisesCorrespondentes, arrayPaises, listaSiglas);
 };
 
 export default criaCards;
