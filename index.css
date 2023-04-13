@@ -102,6 +102,7 @@ select option {
   margin: 0 auto 40px auto;
   background: var(--Dark-Blue);
   border-radius: 0 0 5px 5px;
+  position: relative;
 }
 
 .container_imagem {
@@ -135,10 +136,15 @@ select option {
 
 .modal {
   min-height: 100vh;
-  width: 375px;
+  width: 100vw;
   position: absolute;
   background: var(--Very-Dark-Blue);
   transition: all 1s;
+  border: 1px solid red;
+  z-index: 2;
+  transform: translate(-50%, -50%);
+  top: 50%;
+  left: 50%;
 }
 
 .modal.ativo {

@@ -1,6 +1,7 @@
 import criaCards from './criaCards.js';
 import selecaoRegiao from './selecaoRegiao.js';
 import searchBar from './searchBar.js';
+import clickOnCard from './clickOnCard.js';
 
 const url = 'https://restcountries.com/v3.1/all';
 

@@ -37,7 +37,7 @@ const criaCards = (array, arrayPaises) => {
   });
 
   atualizaImagens(array);
-  clickOnCard(arrayPaises);
+  clickOnCard(array);
 };
 
 export default criaCards;
