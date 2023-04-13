@@ -147,10 +147,6 @@ select option {
   left: 50%;
 }
 
-.modal.ativo {
-  transform: scale(0.1);
-}
-
 /* GoBack */
 
 .goBack_btn {
