@@ -1,13 +1,24 @@
 import criaVizinhos from './criaVizinhos.js';
+import deletaModal from './deletaModal.js';
 
 const clickOnCard = (array, arrayPaises, listaSiglas) => {
   const cards = document.querySelectorAll('.countrie_card');
+
+  const modal = document.querySelector('.modal');
+  console.log(modal);
+
+  if (modal) {
+    console.log('não executa');
+  } else {
+    console.log('executa');
+  }
 
   cards.forEach((card) => {
     card.addEventListener('click', (event) => {
       const modal = document.createElement('div');
       if (card.children.length === 2) {
         //! Identificando o país do card clicado
+
         const nomePaisClicado =
           event.target.parentElement.children[1].children[0].textContent;
 
@@ -108,9 +119,18 @@ const clickOnCard = (array, arrayPaises, listaSiglas) => {
         criaVizinhos(arrayPaises, borders, listaSiglas);
 
         //! Atualizando informações dos países vizinhos
+
+        //!Atualizando a bandeira
+
+        const containerBandeira = document.querySelector('.container_bandeira');
+        containerBandeira.style.backgroundImage = `url('${flags}')`;
+
+        //!Atualizando a bandeira
+
+        deletaModal(card);
       } else {
-        modal.style.transform = 'scale(0.01)';
-        card.removeChild(card.children[2]);
+        /* modal.style.transform = 'scale(0.01)';
+        card.removeChild(card.children[2]); */
       }
     });
   });

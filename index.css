@@ -194,4 +194,6 @@ select option {
   height: 229px;
   border: 1px solid lightblue;
   margin: 0 0 44px 28px;
+  background-size: cover;
+  background-position: center;
 }
