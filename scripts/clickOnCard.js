@@ -5,13 +5,6 @@ const clickOnCard = (array, arrayPaises, listaSiglas) => {
   const cards = document.querySelectorAll('.countrie_card');
 
   const modal = document.querySelector('.modal');
-  console.log(modal);
-
-  if (modal) {
-    console.log('não executa');
-  } else {
-    console.log('executa');
-  }
 
   cards.forEach((card) => {
     card.addEventListener('click', (event) => {
@@ -19,48 +12,49 @@ const clickOnCard = (array, arrayPaises, listaSiglas) => {
       if (card.children.length === 2) {
         //! Identificando o país do card clicado
 
-        const nomePaisClicado =
-          event.target.parentElement.children[1].children[0].textContent;
+        if (event.target.parentElement.children[1].children[0].textContent) {
+          const nomePaisClicado =
+            event.target.parentElement.children[1].children[0].textContent;
 
-        //! Realizando um filtro no array de países e retornando o correspondente ao card clicado
+          //! Realizando um filtro no array de países e retornando o correspondente ao card clicado
 
-        const paisDoModal = arrayPaises.filter((objeto) => {
-          return objeto.name.common === nomePaisClicado;
-        });
+          const paisDoModal = arrayPaises.filter((objeto) => {
+            return objeto.name.common === nomePaisClicado;
+          });
 
-        // flag, native name, population, region, sub region, capital, top level domain, currencies, languages, border countries
+          // flag, native name, population, region, sub region, capital, top level domain, currencies, languages, border countries
 
-        //todo -- Destruction do objeto para facilitar o acesso a variáveis
-        let {
-          flags,
-          name,
-          population,
-          region,
-          subregion,
-          capital,
-          tld,
-          currencies,
-          languages,
-          borders,
-        } = paisDoModal[0];
+          //todo -- Destruction do objeto para facilitar o acesso a variáveis
+          let {
+            flags,
+            name,
+            population,
+            region,
+            subregion,
+            capital,
+            tld,
+            currencies,
+            languages,
+            borders,
+          } = paisDoModal[0];
 
-        let nomeNativo = Object.values(name.nativeName)[0].common;
+          let nomeNativo = Object.values(name.nativeName)[0].common;
 
-        population = population.toLocaleString('pt-BR');
+          population = population.toLocaleString('pt-BR');
 
-        //todo ajustando variáveis
-        flags = flags.svg;
-        name = name.common;
-        capital = capital[0];
-        tld = tld[0];
+          //todo ajustando variáveis
+          flags = flags.svg;
+          name = name.common;
+          capital = capital[0];
+          tld = tld[0];
 
-        currencies = Object.values(currencies)[0].name;
-        languages = Object.values(languages);
+          currencies = Object.values(currencies)[0].name;
+          languages = Object.values(languages);
 
-        //! Criando o modal --
+          //! Criando o modal --
 
-        modal.classList.add('modal');
-        modal.innerHTML = `<button class="goBack_btn">Back</button>
+          modal.classList.add('modal');
+          modal.innerHTML = `<button class="goBack_btn">Back</button>
         <div class="container_bandeira"></div>
   
         <!-- Detalhes país -->
@@ -102,32 +96,35 @@ const clickOnCard = (array, arrayPaises, listaSiglas) => {
         </div>
         <!-- Detalhes país -->`;
 
-        card.appendChild(modal);
-        //Criando o modal --
+          card.appendChild(modal);
+          //Criando o modal --
 
-        //! Atualizando informações de idiomas---------
-        const paragrafoIdiomas = document.querySelector(
-          '.paragrafo_linguagens'
-        );
-        languages.map((idioma) => {
-          paragrafoIdiomas.innerHTML += `${idioma}, `;
-        });
-        //! Atualizando informações de idiomas
+          //! Atualizando informações de idiomas---------
+          const paragrafoIdiomas = document.querySelector(
+            '.paragrafo_linguagens'
+          );
+          languages.map((idioma) => {
+            paragrafoIdiomas.innerHTML += `${idioma}, `;
+          });
+          //! Atualizando informações de idiomas
 
-        //! Atualizando informações dos países vizinhos------------
+          //! Atualizando informações dos países vizinhos------------
 
-        criaVizinhos(arrayPaises, borders, listaSiglas);
+          criaVizinhos(arrayPaises, borders, listaSiglas);
 
-        //! Atualizando informações dos países vizinhos
+          //! Atualizando informações dos países vizinhos
 
-        //!Atualizando a bandeira
+          //!Atualizando a bandeira
 
-        const containerBandeira = document.querySelector('.container_bandeira');
-        containerBandeira.style.backgroundImage = `url('${flags}')`;
+          const containerBandeira = document.querySelector(
+            '.container_bandeira'
+          );
+          containerBandeira.style.backgroundImage = `url('${flags}')`;
 
-        //!Atualizando a bandeira
+          //!Atualizando a bandeira
 
-        deletaModal(card);
+          deletaModal(card);
+        }
       } else {
         /* modal.style.transform = 'scale(0.01)';
         card.removeChild(card.children[2]); */
