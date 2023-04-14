@@ -21,6 +21,10 @@
 
 /* ------------------------ */
 
+body {
+  background: var(--Very-Dark-Blue);
+}
+
 .container {
   width: 375px;
   background: var(--Very-Dark-Blue);
@@ -149,6 +153,11 @@ select option {
   margin: 0; */
   border: none;
   overflow: hidden;
+}
+
+.modal.troca {
+  opacity: 0;
+  transform: translateX(200px);
 }
 
 /* GoBack */

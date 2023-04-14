@@ -1,5 +1,6 @@
 import criaVizinhos from './criaVizinhos.js';
 import deletaModal from './deletaModal.js';
+import modalTroca from './modalTroca.js';
 
 const clickOnCard = (array, arrayPaises, listaSiglas) => {
   const cards = document.querySelectorAll('.countrie_card');
@@ -122,6 +123,30 @@ const clickOnCard = (array, arrayPaises, listaSiglas) => {
           containerBandeira.style.backgroundImage = `url('${flags}')`;
 
           //!Atualizando a bandeira
+
+          //!Limitando o tamanho da tela para não poder movimentar durante a abertura do modal.
+          // Define a largura e altura do modal
+          const modalWidth = modal.offsetWidth;
+          const modalHeight = modal.offsetHeight;
+
+          // Define a largura e altura da tela
+          const screenWidth = window.innerWidth;
+          const screenHeight = window.innerHeight;
+
+          // Define a margem para centralizar o modal
+          const marginX = (screenWidth - modalWidth) / 2;
+          const marginY = (screenHeight - modalHeight) / 2;
+
+          // Define as propriedades CSS para limitar a tela
+          document.body.style.overflow = 'hidden';
+          document.body.style.width = `${screenWidth}px`;
+          document.body.style.height = `${screenHeight}px`;
+          document.body.style.marginTop = `-${marginY}px`;
+          document.body.style.marginLeft = `-${marginX}px`;
+          modal.scrollIntoView({ behavior: 'smooth' });
+
+          const vizinhos = document.querySelectorAll('.neighbor');
+          if (vizinhos.length >= 1) modalTroca(vizinhos);
 
           deletaModal(card);
         }
