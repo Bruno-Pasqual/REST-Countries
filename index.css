@@ -140,7 +140,7 @@ select option {
   position: absolute;
   background: var(--Very-Dark-Blue);
   /* transition: all 1s; */
-  transition: all 1s ease-in-out;
+  transition: all 0.5s ease-in-out;
   border: 1px solid red;
   z-index: 2;
   transform: translate(-50%, -50%);
@@ -149,6 +149,7 @@ select option {
 }
 
 .modal.diminuir {
+  opacity: 0;
   width: 0;
   height: 0;
   min-height: 0;

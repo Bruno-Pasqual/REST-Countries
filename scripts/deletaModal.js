@@ -3,7 +3,7 @@ const deletaModal = (card) => {
   const botaoFecha = document.querySelector('.goBack_btn');
   botaoFecha.addEventListener('click', () => {
     modal.classList.add('diminuir');
-    setTimeout(() => diminuiModal(card), 1200);
+    setTimeout(() => diminuiModal(card), 700);
     console.log(card);
   });
 };
