@@ -4,13 +4,11 @@ const deletaModal = (card) => {
   botaoFecha.addEventListener('click', () => {
     modal.classList.add('diminuir');
     setTimeout(() => diminuiModal(card), 700);
-    console.log(card);
   });
 };
 
 export default deletaModal;
 
 const diminuiModal = (card) => {
-  console.log(card.children);
   card.removeChild(card.children[2]);
 };

@@ -25,7 +25,6 @@
   width: 375px;
   background: var(--Very-Dark-Blue);
   margin: 0 auto;
-  outline: 4px solid red;
 }
 
 header {
@@ -90,12 +89,6 @@ select option {
   border: none;
 }
 
-/* Output Container ----  */
-
-/* .output_container {
-  border: 1px solid red;
-} */
-
 .countrie_card {
   width: 264px;
   height: 336px;
@@ -107,7 +100,7 @@ select option {
 
 .container_imagem {
   height: calc(336px / 2);
-  /* background: red; */
+
   background-image: url('https://flagcdn.com/hu.svg');
   background-size: cover;
   background-position: center;
@@ -141,7 +134,6 @@ select option {
   background: var(--Very-Dark-Blue);
   /* transition: all 1s; */
   transition: all 0.5s ease-in-out;
-  border: 1px solid red;
   z-index: 2;
   transform: translate(-50%, -50%);
   top: 50%;
