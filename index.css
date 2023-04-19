@@ -26,7 +26,7 @@ body {
 }
 
 .container {
-  width: 375px;
+  /*   width: 375px; */
   background: var(--Very-Dark-Blue);
   margin: 0 auto;
 }
@@ -75,10 +75,14 @@ main {
 .filter_container {
   width: 200px;
   height: 48px;
-  margin-left: 16px;
   display: grid;
   place-content: center;
-  margin: 0 0 32px 16px;
+  margin: 0 auto 32px auto;
+}
+
+.output_container {
+  max-width: 375px;
+  margin: 0 auto;
 }
 
 #region_filter {
@@ -86,6 +90,7 @@ main {
   height: 20px;
   background: var(--Very-Dark-Blue);
   border: none;
+  border: 1px solid rgb(68, 67, 67);
 }
 
 select option {
@@ -99,7 +104,7 @@ select option {
   margin: 0 auto 40px auto;
   background: var(--Dark-Blue);
   border-radius: 0 0 5px 5px;
-  position: relative;
+  /*  position: relative; */
 }
 
 .container_imagem {
@@ -209,4 +214,46 @@ select option {
   margin: 0 0 44px 28px;
   background-size: cover;
   background-position: center;
+}
+
+@media (min-width: 760px) {
+  .container {
+    width: 100%;
+  }
+
+  header {
+    padding: 0 81px;
+  }
+
+  main {
+    max-width: 1440px;
+    margin: 0 auto;
+  }
+
+  .output_container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 74px;
+    padding: 0 80px;
+    justify-content: center;
+    max-width: 1440px;
+    margin-top: 152px;
+  }
+
+  .countrie_card {
+    margin: 0;
+  }
+
+  .filter_container {
+    border: 1px solid blue;
+    margin-left: px;
+    position: absolute;
+    top: 103px;
+    right: 80px;
+  }
+
+  #search_input {
+    position: absolute;
+    left: 80px;
+  }
 }
