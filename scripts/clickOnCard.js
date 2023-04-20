@@ -146,7 +146,8 @@ const clickOnCard = (array, arrayPaises, listaSiglas) => {
           modal.scrollIntoView({ behavior: 'smooth' });
 
           const vizinhos = document.querySelectorAll('.neighbor');
-          if (vizinhos.length >= 1) modalTroca(vizinhos);
+          if (vizinhos.length >= 1)
+            modalTroca(vizinhos, modal, arrayPaises, listaSiglas);
 
           deletaModal(card);
         }

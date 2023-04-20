@@ -245,7 +245,6 @@ select option {
   }
 
   .filter_container {
-    border: 1px solid blue;
     margin-left: px;
     position: absolute;
     top: 103px;
