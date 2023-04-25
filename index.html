@@ -11,39 +11,48 @@
     <div class="container">
       <header>
         <h1>Where in the World?</h1>
-        <h1>Dark Mode</h1>
+        <h1 class="dark_mode">Dark Mode</h1>
       </header>
       <main>
-        <!-- Seach bar -->
-        <input
-          placeholder="Search for a country..."
-          type="text"
-          name="search_input"
-          id="search_input"
-        />
-        <!-- Seach bar -->
+        <div class="input_wrapper">
+          <!-- Seach bar -->
+          <input
+            placeholder="Search for a country..."
+            type="text"
+            name="search_input"
+            id="search_input"
+          />
+          <!-- Seach bar -->
 
-        <!-- Filter Container -->
-        <div class="filter_container">
-          <select name="region_filter" id="region_filter">
-            <option disabled selected>Filter by Region</option>
-            <option value="Africa">Africa</option>
-            <option value="Americas">Americas</option>
-            <option value="Asia">Asia</option>
-            <option value="Europe">Europe</option>
-            <option value="Oceania">Oceania</option>
-          </select>
+          <!-- Filter Container -->
+          <div class="filter_container">
+            <p class="filter_title">Filter by region</p>
+            <svg
+              class="arrow_icon active"
+              xmlns="http://www.w3.org/2000/svg"
+              width="24"
+              height="24"
+            >
+              <path
+                d="M12 17.414 3.293 8.707l1.414-1.414L12 14.586l7.293-7.293 1.414 1.414L12 17.414z"
+              />
+            </svg>
+          </div>
+          <!-- Filter Container -->
         </div>
-        <!-- Filter Container -->
 
         <!-- Output Container -->
-        <div class="output_container"></div>
+        <div class="output_container">
+          <div class="country_card"></div>
+          <div class="country_card"></div>
+          <div class="country_card"></div>
+          <div class="country_card"></div>
+        </div>
         <!-- Output Container -->
       </main>
     </div>
 
     <!-- Scripts -->
     <script type="module" src="scripts/index.js"></script>
-    <script src="./scripts/trocaEstado.js"></script>
   </body>
 </html>

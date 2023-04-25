@@ -1,4 +1,162 @@
+@import url('https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@300;600;800&display=swap');
+
 * {
   margin: 0;
   padding: 0;
+  box-sizing: border-box;
+  font-family: 'Nunito Sans', sans-serif;
+}
+
+:root {
+  /* Dark mode */
+  --Dark-Blue: hsl(209, 23%, 22%);
+  --Very-Dark-Blue: hsl(207, 26%, 17%);
+
+  /* Light mode */
+  --Very-Dark-blue-text: hsl(200, 15%, 8%);
+  --Dark-Gray: hsl(0, 0%, 52%);
+  --Very-Light-Gray: hsl(0, 0%, 98%);
+
+  /* Tamanhos de fontes */
+  --tamanho0: 12px;
+  --tamanho1: 14px;
+  --tamanho2: 16px;
+  --tamanho3: 18px;
+  --tamanho4: 24px;
+}
+
+/* ------------------------ */
+
+.container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  padding: 0 80px;
+  height: 80px;
+  margin-bottom: 48px;
+  box-shadow: 3px 1px 5px 2px rgba(0, 0, 0, 0.041);
+}
+
+h1 {
+  font-size: var(--tamanho4);
+}
+
+.dark_mode {
+  font-size: var(--tamanho2);
+}
+
+.input_wrapper {
+  display: flex;
+  justify-content: space-between;
+}
+
+/* ! Main -------------- */
+main {
+  border: 1px solid blue;
+  /* max-width: 1280px; */
+  width: 80%;
+  height: 800px;
+  padding: 0 80px;
+}
+
+.input_wrapper {
+  margin: 48px 0;
+}
+
+/* input container ---- */
+
+#search_input {
+  width: 480px;
+  height: 56px;
+  padding: 19px 0 19.5px 32px;
+  border: none;
+  border-radius: 5px;
+  box-shadow: 0px 2px 9px rgba(0, 0, 0, 0.0532439);
+}
+
+#region_filter {
+  width: 200px;
+  height: 56px;
+  border: none;
+  outline: none;
+  box-shadow: 0px 2px 9px rgba(0, 0, 0, 0.0532439);
+  padding-left: 24px;
+}
+
+option {
+  padding: 8px;
+}
+
+.output_container {
+  min-width: 343px;
+  height: 700px;
+  border: 1px solid lightblue;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 75px;
+  justify-content: center;
+}
+
+.country_card {
+  min-width: 264px;
+  height: 336px;
+  border: 1px solid lightcoral;
+}
+
+.filter_container {
+  border: 1px solid rgba(255, 0, 0, 0.164);
+  width: 200px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 19.5px 0 24px;
+  font-size: var(--tamanho1);
+  font-weight: 400;
+}
+
+.arrow_icon {
+  transition: all 1s;
+}
+
+.arrow_icon.active {
+  transform: rotate(180deg);
+}
+
+/* !media ----------------------------- */
+
+@media (max-width: 580px) {
+  h1 {
+    font-size: var(--tamanho1);
+  }
+
+  .dark_mode {
+    font-size: var(--tamanho0);
+  }
+
+  main {
+    padding: 0 16px;
+  }
+
+  /* Input ----- */
+}
+
+@media (max-width: 1200px) {
+  .input_wrapper {
+    display: flex;
+    flex-direction: column;
+    row-gap: 40px;
+  }
+
+  #search_input {
+    width: 80%;
+    min-width: 343px;
+  }
 }
