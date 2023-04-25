@@ -16,9 +16,5 @@ const fetchData = async () => {
 };
 
 fetchData().then((data) => {
-  criaCards(data, data);
-  //Event listener que realiza a atualização do output com base na seleção de região pelo option
-  selecaoRegiao(data);
-  //Executa função que irá habilitar a pesquisa na barra de pesquisa
-  searchBar(data);
+  console.log(data);
 });
