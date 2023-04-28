@@ -1,3 +1,4 @@
+import CreateCards from './CreateCards.js';
 import HandleFilterClick from './HandleFilterClick.js';
 import StorageData from './StorageData.js';
 
@@ -15,5 +16,6 @@ const fetchData = async () => {
 
 fetchData().then((data) => {
   StorageData(data);
+  CreateCards('Oceania');
   HandleFilterClick();
 });

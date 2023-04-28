@@ -77,7 +77,7 @@ main {
   padding: 19px 0 19.5px 32px;
   border: none;
   border-radius: 5px;
-  box-shadow: 0px 2px 9px rgba(0, 0, 0, 0.0532439);
+  box-shadow: 0px 2px 9px rgba(0, 0, 0, 0.096);
 }
 
 #region_filter {
@@ -100,10 +100,11 @@ main {
   font-weight: 400;
   position: relative;
   box-shadow: 5px 7px 3px rgba(0, 0, 0, 0.034);
+  border-radius: 5px;
 }
 
 .filter_options_container {
-  box-shadow: 5px 7px 3px rgba(0, 0, 0, 0.034);
+  box-shadow: 5px 7px 3px rgba(0, 0, 0, 0.13);
   position: absolute;
   width: 200px;
   top: 55px;
@@ -114,6 +115,7 @@ main {
   row-gap: 8px;
   padding: 16px 0 16px 24px;
   transition: all 0.8s;
+  border-radius: 5px;
 }
 
 .filter_options_container.hidden {
@@ -167,6 +169,7 @@ main {
   height: 336px;
   box-shadow: 0px 0px 7px 2px rgba(0, 0, 0, 0.096);
   transition: all 0.5s;
+  border-radius: 5px;
 }
 
 .country_card:hover {
@@ -183,6 +186,7 @@ main {
   background-size: cover;
   background-position: center;
   box-shadow: 0px 2px 4px 3px rgba(0, 0, 0, 0.116);
+  border-radius: 5px 5px 0 0;
 }
 
 .country_information {
@@ -201,9 +205,26 @@ span {
 
 /* !media ----------------------------- */
 
+@media (max-width: 1200px) {
+  .input_wrapper {
+    display: flex;
+    flex-direction: column;
+    row-gap: 40px;
+  }
+
+  #search_input {
+    width: 80%;
+    min-width: 260px;
+  }
+
+  .filter_option {
+    font-size: 12px;
+  }
+}
+
 @media (max-width: 580px) {
-  header {
-    padding: 0 16px;
+  #search_input {
+    /* width: 343px; */
   }
 
   h1 {
@@ -229,21 +250,4 @@ span {
   }
 
   /* Input ----- */
-}
-
-@media (max-width: 1200px) {
-  .input_wrapper {
-    display: flex;
-    flex-direction: column;
-    row-gap: 40px;
-  }
-
-  #search_input {
-    width: 80%;
-    min-width: 343px;
-  }
-
-  .filter_option {
-    font-size: 12px;
-  }
 }
