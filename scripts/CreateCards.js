@@ -12,7 +12,7 @@ const CreateCards = (countriesRegion) => {
 
   const cardsContainer = document.querySelector('.output_container');
   cardsContainer.innerHTML = '';
-  sortedCountries[countriesRegion].map((country) => {
+  sortedCountries[countriesRegion].map((country, index) => {
     //todo destruction of informations
     const {
       capital,
@@ -30,7 +30,7 @@ const CreateCards = (countriesRegion) => {
     //!puting the population number in the right format
     const formatedPopulation = population.toLocaleString('en-GB');
 
-    console.log(capital);
+    console.log(flags);
 
     cardsContainer.innerHTML += `    <div class="country_card">
     <div class="flag_container"></div>
@@ -41,6 +41,11 @@ const CreateCards = (countriesRegion) => {
       <p class="country_info"><span>Capital: </span> ${capital[0]}</p>
     </div>
   </div>`;
+
+    //! ---
+    const flagContainer = document.querySelectorAll('.flag_container');
+    console.log(flagContainer.parentElement);
+    flagContainer[index].style.backgroundImage = `url('${flags.png}')`;
   });
 };
 
