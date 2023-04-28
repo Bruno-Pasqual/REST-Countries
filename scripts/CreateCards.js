@@ -1,38 +1,47 @@
 const CreateCards = (countriesRegion) => {
-  //! creating variable with data in the sessionStorage. --
+  if (
+    countriesRegion === 'Asia' ||
+    countriesRegion === 'Africa' ||
+    countriesRegion === 'Americas' ||
+    countriesRegion === 'Oceania' ||
+    countriesRegion === 'Europe'
+  ) {
+    //! creating variable with data in the sessionStorage. --
 
-  const allCountries = JSON.parse(sessionStorage.getItem('allCountries'));
-  const sortedCountries = JSON.parse(sessionStorage.getItem('sortedCountries'));
+    const allCountries = JSON.parse(sessionStorage.getItem('allCountries'));
+    const sortedCountries = JSON.parse(
+      sessionStorage.getItem('sortedCountries')
+    );
 
-  //! Logic --
+    //! Logic --
 
-  //! Function --
+    //! Function --
 
-  //! Function --
+    //! Function --
 
-  const cardsContainer = document.querySelector('.output_container');
-  cardsContainer.innerHTML = '';
-  sortedCountries[countriesRegion].map((country, index) => {
-    //todo destruction of informations
-    const {
-      capital,
-      population,
-      name,
-      region,
-      subregion,
-      tld,
-      currencies,
-      languages,
-      flags,
-      borders,
-    } = country;
+    const cardsContainer = document.querySelector('.output_container');
+    cardsContainer.innerHTML = '';
+    sortedCountries[countriesRegion].map((country, index) => {
+      //todo destruction of informations
+      const {
+        capital,
+        population,
+        name,
+        region,
+        subregion,
+        tld,
+        currencies,
+        languages,
+        flags,
+        borders,
+      } = country;
 
-    //!puting the population number in the right format
-    const formatedPopulation = population.toLocaleString('en-GB');
+      //!puting the population number in the right format
+      const formatedPopulation = population.toLocaleString('en-GB');
 
-    console.log(flags);
+      console.log(flags);
 
-    cardsContainer.innerHTML += `    <div class="country_card">
+      cardsContainer.innerHTML += `    <div class="country_card">
     <div class="flag_container"></div>
     <div class="country_information">
       <p class="country_name">${country.name.common}</p>
@@ -42,11 +51,11 @@ const CreateCards = (countriesRegion) => {
     </div>
   </div>`;
 
-    //! ---
-    const flagContainer = document.querySelectorAll('.flag_container');
-    console.log(flagContainer.parentElement);
-    flagContainer[index].style.backgroundImage = `url('${flags.png}')`;
-  });
+      //! ---
+      const flagContainer = document.querySelectorAll('.flag_container');
+      flagContainer[index].style.backgroundImage = `url('${flags.png}')`;
+    });
+  }
 };
 
 export default CreateCards;

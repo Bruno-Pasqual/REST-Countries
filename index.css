@@ -62,7 +62,6 @@ h1 {
 main {
   /* max-width: 1280px; */
   width: 80%;
-
   padding: 0 80px;
 }
 
@@ -145,7 +144,7 @@ main {
 }
 
 .output_container {
-  min-width: 343px;
+  max-width: 1380px;
   height: 700px;
   display: flex;
   flex-wrap: wrap;
@@ -173,6 +172,7 @@ main {
 .country_card:hover {
   transform: scale(1.1);
   cursor: pointer;
+  box-shadow: 10px 10px 7px 2px rgba(0, 0, 0, 0.096);
 }
 
 .flag_container {
@@ -202,6 +202,10 @@ span {
 /* !media ----------------------------- */
 
 @media (max-width: 580px) {
+  header {
+    padding: 0 16px;
+  }
+
   h1 {
     font-size: var(--tamanho1);
   }
@@ -212,6 +216,16 @@ span {
 
   main {
     padding: 0 16px;
+  }
+
+  .output_container {
+    width: 264px;
+    height: 700px;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 75px;
+    justify-content: center;
+    margin: 0 auto;
   }
 
   /* Input ----- */

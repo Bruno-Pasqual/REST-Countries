@@ -16,6 +16,7 @@ const HandleFilterClick = () => {
     if (optionsContainer.classList.contains('hidden')) {
       optionsContainer.style.display = 'flex';
       optionsContainer.classList.remove('hidden');
+      console.log('foi');
     } else {
       // console.log(e.target.textContent);
       CreateCards(e.target.textContent);
