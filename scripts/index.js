@@ -1,4 +1,5 @@
 import HandleFilterClick from './HandleFilterClick.js';
+import StorageData from './StorageData.js';
 
 const url = 'https://restcountries.com/v3.1/all';
 
@@ -13,6 +14,6 @@ const fetchData = async () => {
 };
 
 fetchData().then((data) => {
-  console.log(data);
+  StorageData(data);
   HandleFilterClick();
 });

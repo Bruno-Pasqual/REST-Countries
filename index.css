@@ -157,18 +157,40 @@ main {
   justify-content: center;
 }
 
-.country_card {
-  min-width: 264px;
-  height: 336px;
-  border: 1px solid lightcoral;
-}
-
 .arrow_icon {
   transition: all 1s;
 }
 
 .arrow_icon.active {
   transform: rotate(180deg);
+}
+
+/* ! Country card ----- */
+
+.country_card {
+  min-width: 264px;
+  height: 336px;
+  border: 1px solid lightcoral;
+}
+
+.flag_container {
+  width: 264px;
+  height: 160px;
+  background: rgba(214, 214, 214, 0.61);
+  margin-bottom: 24px;
+}
+
+.country_information {
+  margin-left: 24px;
+}
+
+.country_name {
+  margin-bottom: 16px;
+  font-weight: 800;
+}
+
+span {
+  font-weight: 600;
 }
 
 /* !media ----------------------------- */
