@@ -35,27 +35,112 @@
   position: relative;
 }
 
+/* ! Modal ---------------------------- */
+
 .container.showing_modal::after {
   content: '';
   width: 100%;
-  height: 100vh;
+  height: 100%;
   background: rgba(0, 0, 0, 0.856);
-  position: absolute;
+  position: fixed;
   top: 0;
   left: 0;
+  transform: scale(0);
+  animation: surgir 0.5s forwards;
 }
 
-/* .modal {
-  width: 500px;
-  height: 300px;
+@keyframes surgir {
+  0% {
+    transform: scale(0);
+  }
+  100% {
+    transform: scale(100%);
+  }
+}
+
+.modal {
+  max-width: 1278px;
+  width: 80%;
+  height: 521px;
   background: white;
-  position: absolute;
+  position: fixed;
   z-index: 1;
-  transform: translate(-50%, -50%);
   top: 50%;
   left: 50%;
+  transform: translate(-50%, -50%) scale(0);
+  animation: surgirModal 1s forwards;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  box-shadow: 5px 6px 8px 3px rgba(0, 0, 0, 0.075);
+  border-radius: 5px;
 }
- */
+
+@keyframes surgirModal {
+  from {
+    opacity: 0;
+    transform: translate(-50%, -50%) scale(0);
+  }
+  to {
+    opacity: 1;
+    transform: translate(-50%, -50%) scale(1);
+  }
+}
+
+.country_title {
+  font-size: 32px;
+  font-weight: 800;
+  margin-bottom: 23px;
+}
+
+.details_wrapper {
+  display: flex;
+  column-gap: 140px;
+  margin-bottom: 68px;
+}
+
+.close_modal_btn {
+  position: absolute;
+  width: 136px;
+  height: 40px;
+  font-size: 16px;
+  top: 0;
+  left: 0;
+  border: none;
+  background: none;
+  display: flex;
+  align-items: center;
+  column-gap: 10px;
+  margin-left: 20px;
+}
+
+.borders_container {
+  display: flex;
+  align-items: center;
+  column-gap: 16px;
+}
+
+.border_title {
+  font-size: 16px;
+  font-weight: 600;
+}
+
+.borders_wrapper {
+  display: flex;
+  column-gap: 10px;
+}
+
+.border_country {
+  height: 28px;
+  border: 1px solid lightgray;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0 20px;
+}
+
+/* ! Modal ---------------------------- */
+
 header {
   display: flex;
   justify-content: space-between;
@@ -78,6 +163,18 @@ h1 {
 .input_wrapper {
   display: flex;
   justify-content: space-between;
+}
+
+.flag_container_modal {
+  width: 560px;
+  height: 401px;
+  border: 1px solid blue;
+
+  bottom: 0;
+}
+
+.details_country_modal {
+  bottom: 0;
 }
 
 /* ! Main -------------- */
@@ -269,6 +366,11 @@ span {
     gap: 75px;
     justify-content: center;
     margin: 0 auto;
+  }
+
+  .modal {
+    width: 100%;
+    height: 100vh;
   }
 
   /* Input ----- */
