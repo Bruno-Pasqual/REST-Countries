@@ -1,3 +1,5 @@
+import HandleCardsClick from './HandleCardsClick.js';
+
 const GenerateCards = (array) => {
   const cardsContainer = document.querySelector('.output_container');
   cardsContainer.innerHTML = '';
@@ -22,7 +24,7 @@ const GenerateCards = (array) => {
     //!puting the population number in the right format
     const formatedPopulation = population.toLocaleString('en-GB');
 
-    cardsContainer.innerHTML += `    <div class="country_card">
+    cardsContainer.innerHTML += `    <div class="country_card"  >
     <div class="flag_container"></div>
     <div class="country_information">
       <p class="country_name">${country.name.common}</p>
@@ -36,6 +38,8 @@ const GenerateCards = (array) => {
     const flagContainer = document.querySelectorAll('.flag_container');
     flagContainer[index].style.backgroundImage = `url('${flags.png}')`;
   });
+
+  HandleCardsClick();
 };
 
 export default GenerateCards;
