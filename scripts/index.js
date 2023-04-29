@@ -1,5 +1,6 @@
 import CreateCards from './CreateCards.js';
 import HandleFilterClick from './HandleFilterClick.js';
+import HandleSearch from './HandleSearch.js';
 import StorageData from './StorageData.js';
 
 const url = 'https://restcountries.com/v3.1/all';
@@ -18,4 +19,5 @@ fetchData().then((data) => {
   StorageData(data);
   CreateCards('Oceania');
   HandleFilterClick();
+  HandleSearch();
 });
