@@ -165,12 +165,13 @@ h1 {
 }
 
 .flag_container_modal {
-  width: 560px;
+  width: 660px;
   height: 401px;
   bottom: 0;
   margin-bottom: 16px;
   background-size: cover;
   background-position: center;
+  box-shadow: 3px 6px 4px 4px rgba(0, 0, 0, 0.041);
 }
 
 .details_country_modal {
@@ -368,7 +369,8 @@ span {
 
 @media (max-width: 730px) {
   .flag_container_modal {
-    width: 95%;
+    width: 320px;
+    height: 229px;
     max-width: 500px;
     margin-top: 4rem;
     margin-bottom: -7rem;

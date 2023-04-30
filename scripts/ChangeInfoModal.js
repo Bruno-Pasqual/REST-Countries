@@ -14,7 +14,7 @@ const ChangeInfoModal = (country) => {
     borders,
   } = country[0];
 
-  console.log(flags.png);
+  console.log(borders);
 
   //-- Formating and validation of data ----
   capital ? (capital = capital[0]) : (capital = '--');
@@ -72,6 +72,9 @@ const ChangeInfoModal = (country) => {
   //! Changing the flag --
   const flagContainer = document.querySelector('.flag_container_modal');
   flagContainer.style.backgroundImage = `url('${flags.png}')`;
+
+  //!changing the neighbour countries
+  uptadeNeighbourCountries(borders);
 };
 
 export default ChangeInfoModal;
@@ -97,6 +100,19 @@ const moreThanOneCurrencies = (what, HTMLElement) => {
       HTMLElement.innerHTML += `${currency.name}, `;
     }
   });
+};
+
+const uptadeNeighbourCountries = (borders) => {
+  const neighbourContainer = document.querySelector('.borders_wrapper');
+  if (!borders) {
+    neighbourContainer.innerHTML = ` <p >Neighbourless country</p>`;
+  } else {
+    borders.map((country) => {
+      neighbourContainer.innerHTML += `<p class="border_country">${country}</p>`;
+    });
+  }
+
+  console.log(borders ? 'sim' : 'não');
 };
 
 //! Functions ----------------
