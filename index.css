@@ -109,6 +109,12 @@
   align-items: center;
   column-gap: 10px;
   margin-left: 20px;
+  transition: all 1s;
+}
+
+.close_modal_btn:hover {
+  cursor: pointer;
+  transform: scale(1.1);
 }
 
 .borders_container {
@@ -373,7 +379,7 @@ span {
     height: 229px;
     max-width: 500px;
     margin-top: 4rem;
-    margin-bottom: -1rem;
+    margin-bottom: -2rem;
   }
 
   header {

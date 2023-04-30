@@ -40,7 +40,6 @@ const StorageData = (data) => {
   const sortedCountriesJSON = JSON.stringify(sortedCountries);
   const countriesJSON = JSON.stringify(data);
   const acronymNameJSON = JSON.stringify(acronymName);
-  console.log(acronymName);
 
   sessionStorage.setItem('sortedCountries', sortedCountriesJSON);
   sessionStorage.setItem('allCountries', countriesJSON);

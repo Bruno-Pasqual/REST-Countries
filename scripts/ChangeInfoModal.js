@@ -1,3 +1,5 @@
+import HandleBorderClick from './HandleBorderClick.js';
+
 //! Main function --
 const ChangeInfoModal = (country) => {
   console.log(country);
@@ -14,8 +16,6 @@ const ChangeInfoModal = (country) => {
     flags,
     borders,
   } = country[0];
-
-  console.log(borders);
 
   //-- Formating and validation of data ----
   capital ? (capital = capital[0]) : (capital = '--');
@@ -73,6 +73,7 @@ const ChangeInfoModal = (country) => {
 
   //!changing the neighbour countries
   uptadeNeighbourCountries(borders);
+  HandleBorderClick();
 };
 
 export default ChangeInfoModal;
@@ -102,7 +103,6 @@ const moreThanOneCurrencies = (what, HTMLElement) => {
 
 const uptadeNeighbourCountries = (borders) => {
   const acronymName = JSON.parse(sessionStorage.getItem('acronymName'));
-  console.log(acronymName);
 
   const neighbourContainer = document.querySelector('.borders_wrapper');
   if (!borders) {

@@ -17,7 +17,7 @@ const fetchData = async () => {
 
 fetchData().then((data) => {
   StorageData(data);
-  CreateCards('Oceania');
+  CreateCards('Americas');
   HandleFilterClick();
   HandleSearch();
 });
