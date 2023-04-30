@@ -1,10 +1,16 @@
 const StorageData = (data) => {
+  //!Function
+  const acronymNames = (country) => {
+    acronymName[country.altSpellings[0]] = country.name.common;
+  };
+
   //declarando variáveis
   const Africa = [];
   const Americas = [];
   const Europe = [];
   const Asia = [];
   const Oceania = [];
+  const acronymName = {};
 
   data.map((country) => {
     if (country.region === 'Asia') {
@@ -18,6 +24,7 @@ const StorageData = (data) => {
     } else if (country.region === 'Oceania') {
       Oceania.push(country);
     }
+    acronymNames(country);
   });
 
   const sortedCountries = {
@@ -27,6 +34,8 @@ const StorageData = (data) => {
     Oceania,
     Europe,
   };
+
+  console.log(acronymName);
 
   // Armazenando dados no session storage --
 
