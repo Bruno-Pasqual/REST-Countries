@@ -14,8 +14,7 @@ const ChangeInfoModal = (country) => {
     borders,
   } = country[0];
 
-  console.log(country);
-  console.log(borders);
+  console.log(flags.png);
 
   //-- Formating and validation of data ----
   capital ? (capital = capital[0]) : (capital = '--');
@@ -69,6 +68,10 @@ const ChangeInfoModal = (country) => {
 
   moreThanOne(languages, languageParagraph);
   moreThanOneCurrencies(currencies, currenciesParagraph);
+
+  //! Changing the flag --
+  const flagContainer = document.querySelector('.flag_container_modal');
+  flagContainer.style.backgroundImage = `url('${flags.png}')`;
 };
 
 export default ChangeInfoModal;
@@ -87,7 +90,6 @@ const moreThanOne = (what, HTMLElement) => {
   });
 };
 const moreThanOneCurrencies = (what, HTMLElement) => {
-  console.log(Object.values(what));
   Object.values(what).map((currency, index) => {
     if (Object.values(what).length - 1 === index) {
       HTMLElement.innerHTML += `${currency.name}. `;

@@ -46,13 +46,13 @@
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%) scale(0);
-
   display: flex;
   justify-content: space-around;
   align-items: center;
   flex-wrap: wrap;
   box-shadow: 5px 6px 8px 3px rgba(0, 0, 0, 0.178);
   border-radius: 5px;
+  padding: 0 10rem;
 }
 
 .modal.ativo {
@@ -167,9 +167,10 @@ h1 {
 .flag_container_modal {
   width: 560px;
   height: 401px;
-  border: 1px solid blue;
   bottom: 0;
   margin-bottom: 16px;
+  background-size: cover;
+  background-position: center;
 }
 
 .details_country_modal {
@@ -339,9 +340,9 @@ span {
     font-size: 12px;
   }
 
-  /*   .modal {
+  .modal {
     padding: 6rem 0;
-  } */
+  }
 
   .flag_container_modal {
     height: 301px;
@@ -361,12 +362,16 @@ span {
 
   .details_wrapper {
     margin-bottom: 24px;
+    column-gap: 40px;
   }
 }
 
-@media (max-width: 630px) {
+@media (max-width: 730px) {
   .flag_container_modal {
     width: 95%;
+    max-width: 500px;
+    margin-top: 4rem;
+    margin-bottom: -7rem;
   }
 
   header {
@@ -419,5 +424,11 @@ span {
     row-gap: 10px;
   }
 
+  .modal {
+    padding: 0 1rem;
+    /* flex-direction: column; */
+    justify-content: center;
+    align-items: flex-start;
+  }
   /* Input ----- */
 }
