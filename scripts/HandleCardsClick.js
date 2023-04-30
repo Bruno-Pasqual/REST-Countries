@@ -2,7 +2,6 @@ import ChangeInfoModal from './ChangeInfoModal.js';
 import HandleBorderClick from './HandleBorderClick.js';
 
 const controlModal = (selectedCountry) => {
-  console.log(selectedCountry);
   //todo -- Destructuring to easier acess to the informations
   const {
     capital,

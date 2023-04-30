@@ -1,5 +1,6 @@
 //! Main function --
 const ChangeInfoModal = (country) => {
+  console.log(country);
   //Destruction
   let {
     capital,
@@ -53,9 +54,6 @@ const ChangeInfoModal = (country) => {
     <div class="borders_container">
       <p class="border_title">Border Countries:</p>
       <div class="borders_wrapper">
-        <p class="border_country">France</p>
-        <p class="border_country">Germany</p>
-        <p class="border_country">Netherlands</p>
       </div>`;
 
   //! adding the corresponding languages and currencies ---
@@ -103,16 +101,18 @@ const moreThanOneCurrencies = (what, HTMLElement) => {
 };
 
 const uptadeNeighbourCountries = (borders) => {
+  const acronymName = JSON.parse(sessionStorage.getItem('acronymName'));
+  console.log(acronymName);
+
   const neighbourContainer = document.querySelector('.borders_wrapper');
   if (!borders) {
     neighbourContainer.innerHTML = ` <p >Neighbourless country</p>`;
   } else {
     borders.map((country) => {
-      neighbourContainer.innerHTML += `<p class="border_country">${country}</p>`;
+      if (acronymName[country])
+        neighbourContainer.innerHTML += `<p class="border_country">${acronymName[country]}</p>`;
     });
   }
-
-  console.log(borders ? 'sim' : 'não');
 };
 
 //! Functions ----------------

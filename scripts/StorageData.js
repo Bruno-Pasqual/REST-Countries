@@ -1,7 +1,7 @@
 const StorageData = (data) => {
   //!Function
   const acronymNames = (country) => {
-    acronymName[country.altSpellings[0]] = country.name.common;
+    acronymName[country.cca3] = country.name.common;
   };
 
   //declarando variáveis
@@ -35,15 +35,16 @@ const StorageData = (data) => {
     Europe,
   };
 
-  console.log(acronymName);
-
   // Armazenando dados no session storage --
 
   const sortedCountriesJSON = JSON.stringify(sortedCountries);
   const countriesJSON = JSON.stringify(data);
+  const acronymNameJSON = JSON.stringify(acronymName);
+  console.log(acronymName);
 
   sessionStorage.setItem('sortedCountries', sortedCountriesJSON);
   sessionStorage.setItem('allCountries', countriesJSON);
+  sessionStorage.setItem('acronymName', acronymNameJSON);
 };
 
 export default StorageData;
