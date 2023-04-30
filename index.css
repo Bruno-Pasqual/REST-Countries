@@ -37,44 +37,30 @@
 
 /* ! Modal ---------------------------- */
 
-.container.showing_modal::after {
-  content: '';
+.modal {
   width: 100%;
   height: 100%;
-  background: rgba(0, 0, 0, 0.856);
-  position: fixed;
-  top: 0;
-  left: 0;
-  transform: scale(0);
-  animation: surgir 0.5s forwards;
-}
-
-@keyframes surgir {
-  0% {
-    transform: scale(0);
-  }
-  100% {
-    transform: scale(100%);
-  }
-}
-
-.modal {
-  max-width: 1278px;
-  width: 80%;
-  height: 621px;
   background: white;
   position: fixed;
   z-index: 1;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%) scale(0);
-  animation: surgirModal 1s forwards;
+
   display: flex;
   justify-content: space-around;
   align-items: center;
   flex-wrap: wrap;
-  box-shadow: 5px 6px 8px 3px rgba(0, 0, 0, 0.075);
+  box-shadow: 5px 6px 8px 3px rgba(0, 0, 0, 0.178);
   border-radius: 5px;
+}
+
+.modal.ativo {
+  animation: surgirModal 1s forwards;
+}
+
+.modal.ativo.desativo {
+  animation: hideModal 1s forwards;
 }
 
 @keyframes surgirModal {
@@ -85,6 +71,16 @@
   to {
     opacity: 1;
     transform: translate(-50%, -50%) scale(1);
+  }
+}
+@keyframes hideModal {
+  from {
+    opacity: 1;
+    transform: translate(-50%, -50%) scale(1);
+  }
+  to {
+    opacity: 0;
+    transform: translate(-50%, -50%) scale(0);
   }
 }
 
@@ -343,10 +339,9 @@ span {
     font-size: 12px;
   }
 
-  .modal {
-    height: auto;
+  /*   .modal {
     padding: 6rem 0;
-  }
+  } */
 
   .flag_container_modal {
     height: 301px;
@@ -371,7 +366,7 @@ span {
 
 @media (max-width: 630px) {
   .flag_container_modal {
-    width: 90%;
+    width: 95%;
   }
 
   header {
@@ -400,11 +395,11 @@ span {
     margin: 0 auto;
   }
 
-  .modal {
-    width: 90%;
+  /*   .modal {
+    width: 95%;
     height: auto;
-    padding: 3rem 0;
-  }
+    padding: 3rem 1rem;
+  } */
 
   .details_country_modal {
     max-width: 350px;
@@ -423,5 +418,6 @@ span {
     flex-wrap: wrap;
     row-gap: 10px;
   }
+
   /* Input ----- */
 }

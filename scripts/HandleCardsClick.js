@@ -1,5 +1,7 @@
+import ChangeInfoModal from './ChangeInfoModal.js';
+
 const controlModal = (selectedCountry) => {
-  //!Destructuring to easier acess to the informations
+  //todo -- Destructuring to easier acess to the informations
   const {
     capital,
     population,
@@ -13,55 +15,24 @@ const controlModal = (selectedCountry) => {
     borders,
   } = selectedCountry;
 
-  //! -- Colocando o fundo escuro ao mostrar o modal
+  //todo -- Fazendo a seleção dos elementos no DOM
   const container = document.querySelector('.container');
-  container.classList.add('showing_modal');
+  const modalContainer = document.querySelector('.modal');
 
-  //!Criando o modal
-  const modal = document.createElement('div');
-  modal.classList.add('modal');
-  modal.innerHTML = `  <button class="close_modal_btn"> <img src="./scripts/back.png" alt="">  Back</button>
-        <div class="flag_container_modal"></div>
-        <div class="details_country_modal">
-          <p class="country_title">Belgium</p>
+  //todo -- Alterando o innerHTML do modal
 
-          <!--  -->
-          <div class="details_wrapper">
+  ChangeInfoModal(selectedCountry);
 
-            <!-- ! separador de blocos -->
-            <div class="first_block">
-              <p class="country_info"><span>Native Name: </span> Belgie</p>
-              <p class="country_info"><span>Population: </span> 11,319,511</p>
-              <p class="country_info"><span>Region: </span> Europe</p>
-              <p class="country_info"><span>Sub Region: </span> Western Europe</p>
-              <p class="country_info"><span>Capital: </span> Brussels</p>
-            </div>
-
-            <!-- ! separador de blocos -->
-            <div class="second_block">
-              <p class="country_info"><span>Top Level Domain: </span> .be</p>
-              <p class="country_info"><span>Currencies </span> Euro</p>
-              <p class="country_info"><span>Languages: </span> Dutch, French, German</p>
-            </div>
-          </div>
-          <!--  -->
-
-          <div class="borders_container">
-            <p class="border_title">Border Countries:</p>
-            <div class="borders_wrapper">
-              <p class="border_country">France</p>
-              <p class="border_country">Germany</p>
-              <p class="border_country">Netherlands</p>
-            </div>`;
-  container.appendChild(modal);
+  //Overflow hidden is useful to hide what's out of the limits of the user's screen, in that way is possible to make the windows be fixed in the same place while the modal is visible, preventing the scroll.
   document.body.style.overflow = 'hidden';
+  modalContainer.classList.remove('desativo');
+  modalContainer.classList.add('ativo');
 
-  window.addEventListener('click', (e) => {
-    if (e.target.classList.contains('showing_modal')) {
-      container.classList.remove('showing_modal');
-      document.body.style.overflow = 'auto';
-      container.removeChild(modal);
-    }
+  // ---
+  const closeModal = document.querySelector('.close_modal_btn');
+  closeModal.addEventListener('click', () => {
+    modalContainer.classList.add('desativo');
+    document.body.style.overflow = 'auto';
   });
 };
 
@@ -71,7 +42,6 @@ const HandleCardsClick = () => {
     card.addEventListener('click', () => {
       //Puxando os dados do session storage
       const countries = JSON.parse(sessionStorage.getItem('allCountries'));
-      console.log(countries);
 
       //Selecting the name of the card clicked
       const clickedCountryName = card.children[1].children[0].textContent;
