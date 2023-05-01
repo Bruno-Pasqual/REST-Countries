@@ -1,6 +1,7 @@
 const StorageData = (data) => {
   //!Function
   const acronymNames = (country) => {
+    console.log(country);
     acronymName[country.cca3] = country.name.common;
   };
 

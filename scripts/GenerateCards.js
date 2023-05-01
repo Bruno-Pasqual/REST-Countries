@@ -42,7 +42,9 @@ const GenerateCards = (array) => {
 
     //! ---
     const flagContainer = document.querySelectorAll('.flag_container');
-    flagContainer[index].style.backgroundImage = `url('${flags.png}')`;
+    flagContainer[index].style.backgroundImage = `url('${
+      flags.svg ? flags.svg : flags.png
+    }')`;
   });
 
   HandleCardsClick();

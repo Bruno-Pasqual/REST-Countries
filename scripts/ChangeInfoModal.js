@@ -88,7 +88,9 @@ const ChangeInfoModal = (country) => {
 
   //! Changing the flag --
   const flagContainer = document.querySelector('.flag_container_modal');
-  flagContainer.style.backgroundImage = `url('${flags.png}')`;
+  flagContainer.style.backgroundImage = `url('${
+    flags.svg ? flags.svg : flags.png
+  }')`;
 
   //!changing the neighbour countries
   uptadeNeighbourCountries(borders);
