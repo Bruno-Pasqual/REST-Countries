@@ -24,7 +24,27 @@ const ChangeInfoModal = (country) => {
 
   // --
   const modal = document.querySelector('.modal');
-  modal.innerHTML = `  <button class="close_modal_btn"> <img src="./scripts/back.png" alt="">  Back</button>
+  modal.innerHTML = `  <button class="close_modal_btn"> <svg class='arrow_icon_modal' width="16px" height="16px" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+
+<title/>
+
+<g id="Complete">
+
+<g id="arrow-left">
+
+<g>
+
+<polyline data-name="Right" fill="none" id="Right-2" points="7.6 7 2.5 12 7.6 17" stroke="#000000" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"/>
+
+<line fill="none" stroke="#000000" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" x1="21.5" x2="4.8" y1="12" y2="12"/>
+
+</g>
+
+</g>
+
+</g>
+
+</svg>  Back</button>
   <div class="flag_container_modal"></div>
   <div class="details_country_modal">
     <p class="country_title">${name.common}</p>
@@ -101,6 +121,9 @@ const moreThanOneCurrencies = (what, HTMLElement) => {
 };
 
 const uptadeNeighbourCountries = (borders) => {
+  const darkModeActive = document.body.classList.contains('darkMode')
+    ? true
+    : false;
   const acronymName = JSON.parse(sessionStorage.getItem('acronymName'));
 
   const neighbourContainer = document.querySelector('.borders_wrapper');
@@ -108,8 +131,13 @@ const uptadeNeighbourCountries = (borders) => {
     neighbourContainer.innerHTML = ` <p >Neighbourless country</p>`;
   } else {
     borders.map((country) => {
-      if (acronymName[country])
-        neighbourContainer.innerHTML += `<p class="border_country darkMode">${acronymName[country]}</p>`;
+      if (acronymName[country]) {
+        if (darkModeActive) {
+          neighbourContainer.innerHTML += `<p class="border_country darkMode  ">${acronymName[country]}</p>`;
+        } else {
+          neighbourContainer.innerHTML += `<p class="border_country   ">${acronymName[country]}</p>`;
+        }
+      }
     });
   }
 };

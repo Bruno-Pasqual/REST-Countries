@@ -52,10 +52,24 @@ body.darkMode {
 
 .filter_container.darkMode {
   background: var(--Dark-Blue);
+  color: black;
+}
+
+.filter_container.darkMode .filter_options_container {
+  background: var(--Dark-Blue);
+  color: white;
+}
+
+.filter_container.darkMode .filter_title {
+  color: white;
 }
 
 #search_input.darkMode {
   background: var(--Dark-Blue);
+  color: white;
+}
+
+#search_input.darkMode::placeholder {
   color: white;
 }
 
@@ -72,6 +86,15 @@ body.darkMode {
 .border_country.darkMode {
   border: none;
   background: var(--Dark-Blue);
+}
+
+.modal.darkMode polyline,
+.modal.darkMode line {
+  stroke: white;
+}
+
+.modal.darkMode button {
+  color: white;
 }
 
 /* ! dark mode ---  */
@@ -214,7 +237,20 @@ h1 {
 }
 
 .dark_mode_btn {
+  display: flex;
+  align-items: center;
   font-size: var(--tamanho2);
+  column-gap: 10px;
+  transition: all 1s;
+}
+
+.dark_mode_btn:hover {
+  cursor: pointer;
+  transform: scale(1.1);
+}
+
+.filter_container.darkMode svg {
+  fill: white;
 }
 
 .input_wrapper {

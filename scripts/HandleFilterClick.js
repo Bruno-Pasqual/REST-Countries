@@ -1,4 +1,5 @@
 import CreateCards from './CreateCards.js';
+import HandleDarkModeClick from './HandleDarkModeClick.js';
 
 const HandleFilterClick = () => {
   //! Variables ---
@@ -18,6 +19,7 @@ const HandleFilterClick = () => {
       optionsContainer.classList.remove('hidden');
     } else {
       CreateCards(e.target.textContent);
+      HandleDarkModeClick();
       optionsContainer.classList.add('hidden');
       setTimeout(() => {
         optionsContainer.style.display = 'none';

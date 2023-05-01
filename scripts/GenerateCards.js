@@ -1,6 +1,10 @@
 import HandleCardsClick from './HandleCardsClick.js';
+import HandleDarkModeClick from './HandleDarkModeClick.js';
 
 const GenerateCards = (array) => {
+  const darkModeActive = document.body.classList.contains('darkMode')
+    ? true
+    : false;
   const cardsContainer = document.querySelector('.output_container');
   cardsContainer.innerHTML = '';
 
@@ -24,7 +28,9 @@ const GenerateCards = (array) => {
     //!puting the population number in the right format
     const formatedPopulation = population.toLocaleString('en-GB');
 
-    cardsContainer.innerHTML += `    <div class="country_card"  >
+    cardsContainer.innerHTML += `    <div class="country_card ${
+      darkModeActive ? 'darkMode' : ''
+    } "  >
     <div class="flag_container"></div>
     <div class="country_information">
       <p class="country_name">${country.name.common}</p>
@@ -40,6 +46,7 @@ const GenerateCards = (array) => {
   });
 
   HandleCardsClick();
+  HandleDarkModeClick();
 };
 
 export default GenerateCards;
