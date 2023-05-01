@@ -35,6 +35,47 @@
   position: relative;
 }
 
+/* ! dark mode ---  */
+
+body.darkMode {
+  background: var(--Very-Dark-Blue);
+  color: white;
+}
+
+.container.darkMode {
+  background: var(--Very-Dark-Blue);
+}
+
+.country_card.darkMode {
+  background: var(--Dark-Blue);
+}
+
+.filter_container.darkMode {
+  background: var(--Dark-Blue);
+}
+
+#search_input.darkMode {
+  background: var(--Dark-Blue);
+  color: white;
+}
+
+.modal.darkMode {
+  background: var(--Very-Dark-Blue);
+  color: white;
+}
+
+.close_modal_btn.darkMode {
+  background: var(--Dark-Blue);
+  color: white;
+}
+
+.border_country.darkMode {
+  border: none;
+  background: var(--Dark-Blue);
+}
+
+/* ! dark mode ---  */
+
 /* ! Modal ---------------------------- */
 
 .modal {
@@ -106,7 +147,7 @@
   width: 136px;
   height: 40px;
   font-size: 16px;
-  top: 0;
+  top: 25px;
   left: 0;
   border: none;
   background: none;
@@ -132,6 +173,7 @@
 .border_title {
   font-size: 16px;
   font-weight: 600;
+  margin-bottom: 1rem;
 }
 
 .borders_wrapper {
@@ -151,7 +193,7 @@
 
 .border_country:hover {
   cursor: pointer;
-  background: rgb(207, 207, 207);
+  background: rgba(207, 207, 207, 0.425);
 }
 
 /* ! Modal ---------------------------- */
@@ -171,7 +213,7 @@ h1 {
   font-size: var(--tamanho4);
 }
 
-.dark_mode {
+.dark_mode_btn {
   font-size: var(--tamanho2);
 }
 
@@ -403,7 +445,7 @@ span {
     font-size: var(--tamanho1);
   }
 
-  .dark_mode {
+  .dark_mode_btn {
     font-size: var(--tamanho0);
   }
 

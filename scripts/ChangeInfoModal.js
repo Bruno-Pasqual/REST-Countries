@@ -109,7 +109,7 @@ const uptadeNeighbourCountries = (borders) => {
   } else {
     borders.map((country) => {
       if (acronymName[country])
-        neighbourContainer.innerHTML += `<p class="border_country">${acronymName[country]}</p>`;
+        neighbourContainer.innerHTML += `<p class="border_country darkMode">${acronymName[country]}</p>`;
     });
   }
 };
