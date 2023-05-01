@@ -12,18 +12,15 @@ const HandleFilterClick = () => {
 
     //! -- Options logic
     const filterOptions = document.querySelectorAll('.filter_option');
-    console.log(optionsContainer.classList.contains('hidden'));
+
     if (optionsContainer.classList.contains('hidden')) {
       optionsContainer.style.display = 'flex';
       optionsContainer.classList.remove('hidden');
-      console.log('foi');
     } else {
-      // console.log(e.target.textContent);
       CreateCards(e.target.textContent);
       optionsContainer.classList.add('hidden');
       setTimeout(() => {
         optionsContainer.style.display = 'none';
-        console.log('escondido');
       }, 500);
     }
   });

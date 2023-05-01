@@ -2,7 +2,6 @@ import HandleBorderClick from './HandleBorderClick.js';
 
 //! Main function --
 const ChangeInfoModal = (country) => {
-  console.log(country);
   //Destruction
   let {
     capital,

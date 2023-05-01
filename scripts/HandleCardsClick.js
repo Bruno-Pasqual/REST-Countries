@@ -35,6 +35,7 @@ const controlModal = (selectedCountry) => {
     modalContainer.classList.add('desativo');
     document.body.style.overflow = 'auto';
   });
+  //----
 };
 
 const HandleCardsClick = () => {
