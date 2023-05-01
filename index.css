@@ -60,6 +60,10 @@
   animation: surgirModal 1s forwards;
 }
 
+.modal.ativo.changing {
+  opacity: 0;
+}
+
 .modal.ativo.desativo {
   animation: hideModal 1s forwards;
 }
